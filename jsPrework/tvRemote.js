@@ -34,71 +34,100 @@ Answer = 3 + 5 + 4 + 2 + 7 + 7 + 6 + 2 = 36
 
 */
 
-const keyboard = [['a','b','c','d','e','1','2','3'],
-                ['f','g','h','i','j','4','5','6'],
-                ['k','l','m','n','o','7','8','9'],
-                ['p','q','r','s','t','.','@','0'],
-                ['u','v','w','x','y','z','_','/']
-                ]
+const keyboard = [['a', 'b', 'c', 'd', 'e', '1', '2', '3'],
+['f', 'g', 'h', 'i', 'j', '4', '5', '6'],
+['k', 'l', 'm', 'n', 'o', '7', '8', '9'],
+['p', 'q', 'r', 's', 't', '.', '@', '0'],
+['u', 'v', 'w', 'x', 'y', 'z', '_', '/']
+]
 
-const mapa = [[0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0]
-                ]
+const mapa = [[0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0]
+]
 
 
 //movimientos posibles i++,i--,j++,j--
 
-function Busqueda(X,Y,voc,visitados){
-    var pasos = 0;
-    if(keyboard[X][Y] == voc)
-        return pasos;
-    else{
-        var p1 = Number.MAX_SAFE_INTEGER 
+function Busqueda(X, Y, voc, visitados,encontrado) {
+    visitados[Y][X] = 1
+    var tmp = keyboard[Y][X]
+    if (tmp == voc) {
+        encontrado = true;
+        return 1;
+
+    } else if(!encontrado){
+        var p1 = Number.MAX_SAFE_INTEGER
         var p2 = Number.MAX_SAFE_INTEGER
         var p3 = Number.MAX_SAFE_INTEGER
         var p4 = Number.MAX_SAFE_INTEGER
 
-        visitados[X][Y] = 1
-
-        if(X < 6 && visitados[X++][Y] == 0)
+        if (X < 6) {
             //derecha
-            p1 = Busqueda(X++,Y,voc,visitados);
-        if(X > 0 && visitados[X--][Y] == 0)
+            X++
+            var aux = visitados[Y][X]
+            if (aux == 0)
+                p1 = Busqueda(X, Y, voc, visitados,encontrado);
+            X--
+        }
+
+        if (X > 0) {
+            X--
             //izquierda
-            p2 = Busqueda(X--,Y,voc,visitados);
-        if(Y < 4 && visitados[X][Y++] == 0)
+            if (visitados[Y][X] == 0)
+                p2 = Busqueda(X, Y, voc, visitados,encontrado);
+            X++
+        }
+
+        if (Y < 4) {
+            Y++
             //abajo
-            p3 = Busqueda(X,Y++,voc,visitados);
-        if(Y > 0 && visitados[X][Y--] == 0)
-            //arriba
-            p4 = Busqueda(X,Y--,voc,visitados);
-        
-        return Math.min(p1,p2,p3,p4)
+            if (visitados[Y][X] == 0)
+                p3 = Busqueda(X, Y, voc, visitados,encontrado);
+            Y--
+        }
+
+        if (Y > 0) {
+            Y--
+            if (visitados[Y][X] == 0)
+                //arriba
+                p4 = Busqueda(X, Y, voc, visitados,encontrado);
+            Y++
+        }
+
+        return 1 + Math.min(p1, p2, p3, p4);
     }
+    return Number.MAX_SAFE_INTEGER
 
 
 }
 
-var tvRemote = function(word) {
-  // Your code here
-  var pasos = Number.MAX_SAFE_INTEGER;
-
-  word.split().forEach(voc => {
-    var visitados = mapa;
-    pasos = Busqueda(0,0,voc,visitados);
-  });
-  return pasos;
+var tvRemote = function (word) {
+    // Your code here
+    var pasos = Number.MAX_SAFE_INTEGER;
+    var arr = word.split('')
+    arr.forEach(voc => {
+        var visitados = mapa;
+        pasos = Busqueda(0, 0, voc, visitados);
+        //console.log(visitados);
+    });
+    return pasos;
 }
 
 
+console.log(tvRemote("a"), 1);
+console.log(tvRemote("ab"), 2);
+console.log(tvRemote("b"), 2);
+console.log(tvRemote("bc"), 3);
 
-console.log(tvRemote("does"), 16);
+//no chusca , revisar 
+
+/*
 console.log(tvRemote("your"), 23);
 console.log(tvRemote("solution"), 33);
 console.log(tvRemote("work"), 20);
 console.log(tvRemote("for"), 12);
 console.log(tvRemote("these"), 27);
-console.log(tvRemote("words"), 25);
+console.log(tvRemote("words"), 25);*/
