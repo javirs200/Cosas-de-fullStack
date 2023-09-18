@@ -1,0 +1,14 @@
+
+body{
+    padding-left : 10%;
+    padding-right: 10%;
+}
+
+address {
+    text-align: right;
+}
+
+footer {
+    padding-top: 10%;
+    padding-bottom: 5%;
+}
