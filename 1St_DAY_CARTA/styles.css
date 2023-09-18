@@ -5,10 +5,15 @@ body{
 }
 
 address {
+    /*pone que no allinee texto a la derecha 
+    pero no se como desplazar el texto de addres*/
     text-align: right;
 }
 
 footer {
-    padding-top: 10%;
     padding-bottom: 5%;
+}
+
+p#greeting{
+    padding-bottom: 10%;
 }
