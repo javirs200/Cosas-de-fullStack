@@ -1,16 +1,5 @@
 console.log("iniciando script");
 
-
-function name(p1, p2) {
-    console.log("has llamado a la funcion name")
-    console.log("con parametros:")
-
-    console.log("p1 ->", p1);
-
-    console.log("p2 ->", p2);
-
-}
-
 window.onload = () => {
     boton = document.getElementById("accion")
 
@@ -19,23 +8,25 @@ window.onload = () => {
         boton.onclick = () => {
 
             console.log("has pulsado");
-            let key = prompt("pon un color:","azul")
 
-            switch (key) {
-                case "rojo":
-                    console.log("c1");
-                    break;
+            localStorage.setItem("myCat", "Tom");
 
-                default:
-                    console.log("cDefault");
-                    break;
-            }
+            console.log("save to lacl Storage");
+
+            let local = localStorage.getItem("myCat");
+
+            console.log("load from local Storage", local)
+
         }
     }
+
+    var fileContent = "My epic novel that I don't want to lose.";
+    var bb = new Blob([fileContent], { type: 'text/plain' });
+    var a = document.createElement('a');
+    a.download = 'download.txt';
+    a.href = window.URL.createObjectURL(bb);
+    a.click();
 }
-
-
-name("hola", "que tal")
 
 
 
