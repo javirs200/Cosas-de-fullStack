@@ -26,72 +26,72 @@ function closeFullscreen() {
 }
 
 function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function pausa(){
-    for (let i = 5; i > 0; i--) {
-        console.log(i);
-        await sleep(1000);
-    }
+async function pausa() {
+  for (let i = 5; i > 0; i--) {
+    console.log(i);
+    await sleep(1000);
+  }
 
 }
 
-function surprise(){
+function surprise() {
 
-    let video = document.getElementById("video");
+  let video = document.getElementById("video");
 
-    let divContent = document.getElementById("content");
+  let divContent = document.getElementById("content");
 
 
-    if(video != null && divContent != null){
+  if (video != null && divContent != null) {
 
-        divContent.hidden = true;
+    divContent.hidden = true;
 
-        video.loop = true;
+    video.loop = true;
 
-        video.hidden = false;
+    video.hidden = false;
 
-        video.autofocus = true;
+    video.autofocus = true;
 
-        video.play();
-    }
+    video.play();
+  }
 }
 
 window.onload = () => {
-    let boton = document.getElementById("accion");
+  let boton = document.getElementById("accion");
 
-    if (boton != null) {
+  if (boton != null) {
 
-        boton.onclick = () => {
+    boton.onclick = () => {
 
-            console.log("has pulsado");
+      console.log("has pulsado");
 
-            localStorage.setItem("myCat", "Tom");
+      localStorage.setItem("myCat", "Tom");
 
-            console.log("save to lacl Storage");
+      console.log("save to lacl Storage");
 
-            let local = localStorage.getItem("myCat");
+      let local = localStorage.getItem("myCat");
 
-            console.log("load from local Storage", local);
+      console.log("load from local Storage", local);
 
-            console.log("requiesting fullScren");
+      console.log("requiesting fullScren");
 
-            //pausa()
+      //pausa()
 
-            openFullscreen();
+      openFullscreen();
 
-            surprise();
+      surprise();
 
-        }
     }
+  }
 
-    /*var fileContent = "My epic novel that I don't want to lose.";
-    var bb = new Blob([fileContent], { type: 'text/plain' });
-    var a = document.createElement('a');
-    a.download = 'download.txt';
-    a.href = window.URL.createObjectURL(bb);
-    a.click();*/
+  /*var fileContent = "My epic novel that I don't want to lose.";
+  var bb = new Blob([fileContent], { type: 'text/plain' });
+  var a = document.createElement('a');
+  a.download = 'download.txt';
+  a.href = window.URL.createObjectURL(bb);
+  a.click();*/
 }
 
 
