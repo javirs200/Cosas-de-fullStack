@@ -113,13 +113,13 @@ window.onload = () => {
 
   // Función para pedir números por teclado y almacenarlos en un array
   function pedirNumeros() {
-    const numeros = [];
+    let numeros = [];
 
     while (true) {
-      const numero = prompt("Introduce un número (0 para detenerse):");
+      let numero = prompt("Introduce un número (0 para detenerse):");
 
       // Convierte la entrada del usuario en un número
-      const numeroParseado = parseFloat(numero);
+      let numeroParseado = parseFloat(numero);
 
       if (isNaN(numeroParseado)) {
         alert("Por favor, introduce un número válido.");
