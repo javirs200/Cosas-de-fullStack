@@ -111,5 +111,36 @@ window.onload = () => {
 
   console.log(tabla(n));
 
+  // Función para pedir números por teclado y almacenarlos en un array
+  function pedirNumeros() {
+    const numeros = [];
 
+    while (true) {
+      const numero = prompt("Introduce un número (0 para detenerse):");
 
+      // Convierte la entrada del usuario en un número
+      const numeroParseado = parseFloat(numero);
+
+      if (isNaN(numeroParseado)) {
+        alert("Por favor, introduce un número válido.");
+        continue;
+      }
+
+      if (numeroParseado === 0) {
+        break;
+      }
+
+      numeros.push(numeroParseado);
+    }
+
+    // Ordena los números de menor a mayor
+    numeros.sort(function (a, b) { return a - b });
+
+    return numeros;
+  }
+
+  let numerosOrdenados = pedirNumeros();
+
+  console.log("Números ordenados: " + numerosOrdenados.join(", "););
+
+}
