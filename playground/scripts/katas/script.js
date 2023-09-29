@@ -99,7 +99,7 @@ Input -> Output
 "8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd" -> "88Bifk8hB8BB8BBBB888chl8BhBfd"
 "8aaaaa dddd r     " -> "8aaaaaddddr"*/
 
-function noSpace(x){
+function noSpace(x) {
     return x.split(' ').join('')
 }
 
@@ -114,35 +114,35 @@ sumOfABeach("cItYTowNcARShoW")               ==>  0*/
 function sumOfABeach(beachString) {
     // Convert the input string to lowercase
     const lowerCaseString = beachString.toLowerCase();
-  
+
     // Define the target words
     const targetWords = ["sand", "water", "fish", "sun"];
-  
+
     // Initialize a count variable to keep track of the number of occurrences
     let count = 0;
-  
+
     // Iterate through the target words and count their occurrences
     for (const word of targetWords) {
-      let startIndex = 0;
-      while (startIndex !== -1) {
-        // Find the next occurrence of the target word
-        startIndex = lowerCaseString.indexOf(word, startIndex);
-  
-        // If the word is found, increment the count and update the start index
-        if (startIndex !== -1) {
-          count++;
-          startIndex += word.length;
+        let startIndex = 0;
+        while (startIndex !== -1) {
+            // Find the next occurrence of the target word
+            startIndex = lowerCaseString.indexOf(word, startIndex);
+
+            // If the word is found, increment the count and update the start index
+            if (startIndex !== -1) {
+                count++;
+                startIndex += word.length;
+            }
         }
-      }
     }
-  
+
     return count;
-  }
+}
 
 
 
-  /*
-  You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+/*
+You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
 
 #Examples:
 
@@ -164,18 +164,18 @@ The middle character(s) of the word represented as a string.*/
 
 function getMiddle(str) {
     const length = str.length;
-    
+
     // Check if the length is odd or even
     if (length % 2 === 0) {
-      // If even, return the middle two characters
-      const middleIndex = length / 2 - 1;
-      return str.slice(middleIndex, middleIndex + 2);
+        // If even, return the middle two characters
+        const middleIndex = length / 2 - 1;
+        return str.slice(middleIndex, middleIndex + 2);
     } else {
-      // If odd, return the middle character
-      const middleIndex = Math.floor(length / 2);
-      return str.charAt(middleIndex);
+        // If odd, return the middle character
+        const middleIndex = Math.floor(length / 2);
+        return str.charAt(middleIndex);
     }
-  }
+}
 
 
 
@@ -192,16 +192,59 @@ Input: 123456789 Output: 987654321*/
 function descendingOrder(n) {
     // Convert the integer to a string and split it into an array of digits
     const digits = n.toString().split('');
-  
+
     // Sort the array in descending order
     const sortedDigits = digits.sort((a, b) => b - a);
-  
+
     // Join the sorted digits back into a string and parse it as an integer
     const result = parseInt(sortedDigits.join(''));
-  
+
     return result;
+}
+
+
+
+/*Ejercicio 1:
+Diseña un algoritmo que cuente las veces que aparece una determinada letra en una frase
+
+Ejercicio 2:
+Diseña un algoritmo que imprima los números impares entre un número dado por el usuario y los siguientes 50 números
+
+Entregad vuestra solución por classroom. Si os da tiempo, pensad varias maneras de resolverlo y enviad vuestras soluciones. Podéis enviar una primera solución y luego añadir otras en comentarios.*/
+
+
+function contarOcurrencias(letra,frase) {
+
+  let contador = 0;
+
+  let minusfrase = frase.toLowerCase()
+  let minusletra = letra.toLowerCase()
+
+  for (let i = 0; i < minusfrase.length; i++) {
+   
+    if (minusfrase[i] === minusletra) {
+      contador++
+    }
   }
-  
+
+  return contador
+}
+
+
+function dameImpares() {
+
+    const numeroUsuario = parseInt(prompt("Por favor, ingresa un número:"));
+
+    if (!isNaN(numeroUsuario)) {
+    
+        for (let i = numeroUsuario; i < numeroUsuario + 50; i++) {
+            if(i % 2 !== 0){
+                console.log(i);
+            }
+        }  
+    }
+}
+
 
 
 window.onload = () => {
@@ -210,7 +253,7 @@ window.onload = () => {
     if (boton != null) {
 
         boton.onclick = () => {
-
+            dameImpares()
         }
     }
 }
