@@ -245,6 +245,29 @@ function dameImpares() {
     }
 }
 
+/*A Narcissistic Number is a number of length l in which the sum of its digits to the power of l is equal to the original number. If this seems confusing, refer to the example below.
+
+Ex: 153, where l = 3 ( the number of digits in 153 )
+13 + 53 + 33 = 153
+
+Write a function that, given n, returns whether or not n is a Narcissistic Number.*/
+
+
+function isNarcissistic(n) {
+    let num = n.toString()
+    let arr = num.split('')
+    let lenght = arr.length
+    let sum = 0;
+    arr.forEach(element => {
+        sum += Math.pow(Number(element),lenght)
+        
+        console.log(element,Number(element) * lenght,sum);
+    });
+
+    console.log("arr-> ", arr, "length ->" , lenght , "sum -> ", sum , "n -> ", n);
+
+    return sum === n
+  }
 
 
 window.onload = () => {
@@ -253,7 +276,7 @@ window.onload = () => {
     if (boton != null) {
 
         boton.onclick = () => {
-            dameImpares()
+            isNarcissistic(153)
         }
     }
 }
