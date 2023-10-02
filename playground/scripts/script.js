@@ -15,7 +15,8 @@
 window.onload = () => {
 
 	function mostrarOcultar(){
-		let parrrafo = document.getElementById("textParagraph")
+		//let parrrafo = document.getElementById("textParagraph")
+		let parrrafo = document.querySelector("p#textParagraph")
 		parrrafo.hidden = !parrrafo.hidden
 	}
 
@@ -24,7 +25,7 @@ window.onload = () => {
 	boton.addEventListener("click",mostrarOcultar)
 
 	function spawn(){
-		let main = document.getElementById("main")
+		let main = document.querySelector("main")
 		let lista = document.createElement("ul")
 		let li1 = document.createElement("li")
 		let art = document.createAttribute("cosa")
@@ -32,8 +33,8 @@ window.onload = () => {
 		li1.innerHTML="patatas"
 		let li2 = document.createElement("li")
 		let node = document.createTextNode("nodo")
-		li2.innerHTML = node
 		lista.appendChild(li1)
+		li2.appendChild(node)
 		lista.appendChild(li2)
 		main.appendChild(lista)
 
@@ -41,6 +42,6 @@ window.onload = () => {
 
 	let boton2 = document.getElementById("crear")
 
-	boton.addEventListener("click",spawn)
+	boton2.addEventListener("click",spawn)
 
 }
