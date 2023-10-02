@@ -213,21 +213,21 @@ Diseña un algoritmo que imprima los números impares entre un número dado por 
 Entregad vuestra solución por classroom. Si os da tiempo, pensad varias maneras de resolverlo y enviad vuestras soluciones. Podéis enviar una primera solución y luego añadir otras en comentarios.*/
 
 
-function contarOcurrencias(letra,frase) {
+function contarOcurrencias(letra, frase) {
 
-  let contador = 0;
+    let contador = 0;
 
-  let minusfrase = frase.toLowerCase()
-  let minusletra = letra.toLowerCase()
+    let minusfrase = frase.toLowerCase()
+    let minusletra = letra.toLowerCase()
 
-  for (let i = 0; i < minusfrase.length; i++) {
-   
-    if (minusfrase[i] === minusletra) {
-      contador++
+    for (let i = 0; i < minusfrase.length; i++) {
+
+        if (minusfrase[i] === minusletra) {
+            contador++
+        }
     }
-  }
 
-  return contador
+    return contador
 }
 
 
@@ -236,12 +236,12 @@ function dameImpares() {
     const numeroUsuario = parseInt(prompt("Por favor, ingresa un número:"));
 
     if (!isNaN(numeroUsuario)) {
-    
+
         for (let i = numeroUsuario; i < numeroUsuario + 50; i++) {
-            if(i % 2 !== 0){
+            if (i % 2 !== 0) {
                 console.log(i);
             }
-        }  
+        }
     }
 }
 
@@ -259,14 +259,24 @@ function isNarcissistic(n) {
     let lenght = arr.length
     let sum = 0;
     arr.forEach(element => {
-        sum += Math.pow(Number(element),lenght)
-        
-        console.log(element,Number(element) * lenght,sum);
+        sum += Math.pow(Number(element), lenght)
+
+        console.log(element, Number(element) * lenght, sum);
     });
 
-    console.log("arr-> ", arr, "length ->" , lenght , "sum -> ", sum , "n -> ", n);
+    console.log("arr-> ", arr, "length ->", lenght, "sum -> ", sum, "n -> ", n);
 
     return sum === n
+}
+
+//optimisasao del profe 
+function isNarcissistic2(n) {
+    let num = n+"";
+    let result = 0;
+    for (i = 0; i < num.length; i++) {
+      result += num[i] ** num.length;
+    }
+  return result == n
   }
 
 
