@@ -6,3 +6,5 @@
 	url = https://github.com/javirs200/fundamentos-de-programacion-kata-bichomon.git
 [submodule "TAREAS/EjerciciosDom"]
 	url = https://github.com/javirs200/EjerciciosDom
+[submodule "TAREAS/PERSONAL"]
+	url = https://github.com/javirs200/PERSONAL.git
