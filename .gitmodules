@@ -8,3 +8,6 @@
 	url = https://github.com/javirs200/EjerciciosDom
 [submodule "TAREAS/PERSONAL"]
 	url = https://github.com/javirs200/PERSONAL.git
+[submodule "TAREAS/proyectos-quiz"]
+	path = TAREAS/proyectos-quiz
+	url = https://github.com/javirs200/proyectos-quiz.git
