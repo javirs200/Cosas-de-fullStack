@@ -1,7 +1,7 @@
 //playground for local js
 
 function local() {
-    
+    console.log("local");
 }
 
 window.onload = () => {
