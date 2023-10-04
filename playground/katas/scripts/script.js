@@ -271,36 +271,82 @@ function isNarcissistic(n) {
 
 //optimisasao del profe 
 function isNarcissistic2(n) {
-    let num = n+"";
+    let num = n + "";
     let result = 0;
     for (i = 0; i < num.length; i++) {
-      result += num[i] ** num.length;
+        result += num[i] ** num.length;
     }
-  return result == n
-  }
+    return result == n
+}
 
-  /*There are pillars near the road. The distance between the pillars 
-  is the same and the width of the pillars is the same. 
-  Your function accepts three arguments:
+/*There are pillars near the road. The distance between the pillars 
+is the same and the width of the pillars is the same. 
+Your function accepts three arguments:
 
 number of pillars (≥ 1);
 distance between pillars (10 - 30 meters);
 width of the pillar (10 - 50 centimeters).
 Calculate the distance between the first and the last pillar in centimeters
- (without the width of the first and last pillar).*/
+(without the width of the first and last pillar).*/
 
- function pillars(numPill, dist, width) {
-  
-    if(numPill > 1) {
-      //huecos entre postes
-      let inter = (numPill-1)*dist*100
-      //grosores de los postes intermedios 
-      let grosores = (numPill-2)*width
+function pillars(numPill, dist, width) {
+
+    if (numPill > 1) {
+        //huecos entre postes
+        let inter = (numPill - 1) * dist * 100
+        //grosores de los postes intermedios 
+        let grosores = (numPill - 2) * width
         return grosores + inter;
     } else {
-      return 0;
+        return 0;
     }
-  }
+}
+
+
+
+
+/*
+Create a function that takes any sentence and redistributes the spaces
+ (and adds additional spaces if needed) so that each word starts with a vowel.
+  The letters should all be in the same order but every vowel in the sentence 
+  should be the start of a new word. The first word in the new sentence may start without a vowel.
+   It should return a string in all lowercase with no punctuation (only alphanumeric characters).
+
+EXAMPLES
+'It is beautiful weather today!' => 'it isb e a ut if ulw e ath ert od ay'
+'Coding is great' => 'c od ing isgr e at'
+'my number is 0208-533-2325' => 'myn umb er is02085332325'*/
+
+
+
+function vowelStart(str) {
+    const vowels = ['a', 'e', 'i', 'o', 'u']
+    //quitamos todos los espacios
+    let noSpaces = str.split(" ").join("")
+    //pasamos a minuscula
+    noSpaces = noSpaces.toLowerCase()
+    //aqui almaceno la solucion
+    let strSpaces = ""
+    //recorrido letra a letra
+    for (const letter of noSpaces) {
+        //compruebo que sea alfanumerico regex (expresiones regulares)
+        if (letter.match(/[0-9a-z]/)) {
+            //check pa la primera
+            if (strSpaces.length < 1) {
+                strSpaces += letter
+            } else {
+                // si es vocal la meto un espacio delante
+                if (vowels.includes(letter)) {
+                    strSpaces += " " + letter
+                } else {
+                    strSpaces += letter
+                }
+            }
+        }
+    }
+    //devolvemos solucion
+    return strSpaces;
+}
 
 window.onload = () => {
     let boton = document.getElementById("accion");
@@ -308,7 +354,8 @@ window.onload = () => {
     if (boton != null) {
 
         boton.onclick = () => {
-            console.log(pillars(2, 20, 25) , 2000);
+            console.log(vowelStart('It is beautiful weather today!'),
+                'it isb e a ut if ulw e ath ert od ay',);
         }
     }
 }
