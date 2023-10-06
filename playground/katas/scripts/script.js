@@ -399,7 +399,29 @@ const winnerList1 = [
     { season: '2015–16', team: 'Real Madrid', country: 'Spain' }
 ];
 
+/*
+Given a number,
+ write a function to output its reverse digits. (e.g. given 123 the answer is 321)
 
+Numbers should preserve their sign; i.e. 
+a negative number should still be negative when reversed.
+
+*/
+
+let ar = []
+
+ar.pop
+
+function reverseNumber(n) {
+    if(n>=0)
+        return Number(n.toString().split("").reverse().join(""));
+    else{
+        let arr =  n.toString().split("");
+        arr.shift();
+        arr.push("-");
+        return Number(arr.reverse().join(""));
+    }
+  }
 
 
 
@@ -409,13 +431,8 @@ window.onload = () => {
     if (boton != null) {
 
         boton.onclick = () => {
-            console.log(countWins(winnerList1, 'Portugal'), 1);
-            console.log(countWins(winnerList1, 'FootLand'), 0);
-            console.log(countWins(winnerList1, 'Spain'), 9);
-
-            console.log(countWins2(winnerList1, 'Portugal'), 1);
-            console.log(countWins2(winnerList1, 'FootLand'), 0);
-            console.log(countWins2(winnerList1, 'Spain'), 9);
+           console.log(reverseNumber(1234));
+           console.log(reverseNumber(-1234));
         }
     }
 }
