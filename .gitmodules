@@ -3,7 +3,7 @@
 [submodule "TAREAS/fundamentos-de-programacion-kata-bichomon"]
 	url = https://github.com/javirs200/fundamentos-de-programacion-kata-bichomon.git
 [submodule "TAREAS/EjerciciosDom"]
-	url = https://github.com/javirs200/EjerciciosDom
+	url = https://github.com/javirs200/EjerciciosDom.git
 [submodule "TAREAS/PERSONAL"]
 	url = https://github.com/javirs200/PERSONAL.git
 [submodule "TAREAS/proyectos-quiz"]
