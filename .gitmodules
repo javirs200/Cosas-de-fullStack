@@ -11,3 +11,13 @@
 [submodule "TAREAS/proyectos-quiz"]
 	path = TAREAS/proyectos-quiz
 	url = https://github.com/javirs200/proyectos-quiz.git
+[submodule "TAREAS/fundamentos-de-programacion-bikram-array-funciones"]
+	url = https://github.com/javirs200/fundamentos-de-programacion-bikram-array-funciones.git
+[submodule "TAREAS/fundamentos-de-programacion-bikram-objetos"]
+	url = https://github.com/javirs200/fundamentos-de-programacion-bikram-objetos.git
+[submodule "TAREAS/fundamentos-de-programacion-bikram-var-bucles-condicionales"]
+	url = https://github.com/javirs200/fundamentos-de-programacion-bikram-var-bucles-condicionales.git
+[submodule "TAREAS/fundamentos-de-programacion-kata-chauchat"]
+	url = https://github.com/javirs200/fundamentos-de-programacion-kata-chauchat.git
+[submodule "TAREAS/fundamentos-de-programacion-kata-fizzbuzz"]
+	url = https://github.com/javirs200/fundamentos-de-programacion-kata-fizzbuzz.git
