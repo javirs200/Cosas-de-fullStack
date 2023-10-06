@@ -2,9 +2,6 @@
 	url = https://github.com/javirs200/fundamentos-de-programacion-pp-varita-magica.git
 [submodule "TAREAS/fundamentos-de-programacion-kata-bichomon"]
 	url = https://github.com/javirs200/fundamentos-de-programacion-kata-bichomon.git
-[submodule "TAREAS/proyectos-quiz"]
-	path = TAREAS/proyectos-quiz
-	url = https://github.com/javirs200/proyectos-quiz.git
 [submodule "TAREAS/fundamentos-de-programacion-bikram-array-funciones"]
 	url = https://github.com/javirs200/fundamentos-de-programacion-bikram-array-funciones.git
 [submodule "TAREAS/fundamentos-de-programacion-bikram-objetos"]
