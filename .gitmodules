@@ -21,3 +21,5 @@
 	url = https://github.com/javirs200/fundamentos-de-programacion-kata-fizzbuzz.git
 [submodule "TAREAS/MiniLibJS"]
 	url = https://github.com/javirs200/MiniLibJS.git
+[submodule "TAREAS/advanced-js-bikram-destructuring-spread-rest"]
+	url = https://github.com/javirs200/advanced-js-bikram-destructuring-spread-rest.git
