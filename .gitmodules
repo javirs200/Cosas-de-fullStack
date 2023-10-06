@@ -1,5 +1,3 @@
-[submodule "DemosClases/fs-ft-sep23-RampUp-examples-multi"]
-	url = https://github.com/TheBridge-FullStackDeveloper/fs-ft-sep23-RampUp-examples-multi.git
 [submodule "TAREAS/fundamentos-de-programacion-pp-varita-magica"]
 	url = https://github.com/javirs200/fundamentos-de-programacion-pp-varita-magica.git
 [submodule "TAREAS/fundamentos-de-programacion-kata-bichomon"]
