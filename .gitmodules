@@ -19,3 +19,5 @@
 	url = https://github.com/javirs200/fundamentos-de-programacion-kata-chauchat.git
 [submodule "TAREAS/fundamentos-de-programacion-kata-fizzbuzz"]
 	url = https://github.com/javirs200/fundamentos-de-programacion-kata-fizzbuzz.git
+[submodule "TAREAS/MiniLibJS"]
+	url = https://github.com/javirs200/MiniLibJS.git
