@@ -23,3 +23,5 @@
 	url = https://github.com/javirs200/MiniLibJS.git
 [submodule "TAREAS/advanced-js-bikram-destructuring-spread-rest"]
 	url = https://github.com/javirs200/advanced-js-bikram-destructuring-spread-rest.git
+[submodule "TAREAS/advanced-js-bikram-map-filter-reduce"]
+	url = https://github.com/javirs200/advanced-js-bikram-map-filter-reduce.git
