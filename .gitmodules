@@ -18,3 +18,12 @@
 	url = https://github.com/javirs200/advanced-js-bikram-destructuring-spread-rest.git
 [submodule "TAREAS/advanced-js-bikram-map-filter-reduce"]
 	url = https://github.com/javirs200/advanced-js-bikram-map-filter-reduce.git
+[submodule "TAREAS/proyectos-quiz"]
+	path = TAREAS/proyectos-quiz
+	url = https://github.com/javirs200/proyectos-quiz.git
+[submodule "TAREAS/EjerciciosDom"]
+	path = TAREAS/EjerciciosDom
+	url = https://github.com/javirs200/EjerciciosDom.git
+[submodule "TAREAS/PERSONAL"]
+	path = TAREAS/PERSONAL
+	url = https://github.com/javirs200/PERSONAL.git
