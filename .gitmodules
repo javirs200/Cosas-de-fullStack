@@ -24,3 +24,5 @@
 	url = https://github.com/javirs200/EjerciciosDom.git
 [submodule "TAREAS/PERSONAL"]
 	url = https://github.com/javirs200/PERSONAL.git
+[submodule "TAREAS/prueba_gitHub"]
+	url = https://github.com/javirs200/prueba_gitHub.git
