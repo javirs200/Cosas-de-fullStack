@@ -26,3 +26,5 @@
 	url = https://github.com/javirs200/PERSONAL.git
 [submodule "TAREAS/prueba_gitHub"]
 	url = https://github.com/javirs200/prueba_gitHub.git
+[submodule "TAREAS/Advanced-JS-Asynchronous-code"]
+	url = https://github.com/javirs200/Advanced-JS-Asynchronous-code.git
