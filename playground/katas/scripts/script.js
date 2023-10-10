@@ -368,7 +368,7 @@ countWins(winnerList1, 'Sportland') => should return 0 */
 function countWins(winnerList, country) {
     // your awesome code here
     return winnerList.filter((el) => el.country == country)
-                    .reduce((acc,actual) => acc+1, 0);
+        .reduce((acc, actual) => acc + 1, 0);
 }
 
 function countWins2(winnerList, country) {
@@ -413,15 +413,15 @@ let ar = []
 ar.pop
 
 function reverseNumber(n) {
-    if(n>=0)
+    if (n >= 0)
         return Number(n.toString().split("").reverse().join(""));
-    else{
-        let arr =  n.toString().split("");
+    else {
+        let arr = n.toString().split("");
         arr.shift();
         arr.push("-");
         return Number(arr.reverse().join(""));
     }
-  }
+}
 
 /*In this little assignment you are given a string of space separated numbers
 , and have to return the highest and lowest number.
@@ -432,8 +432,40 @@ highAndLow("1 2 -3 4 5"); // return "5 -3"
 highAndLow("1 9 3 4 -5"); // return "9 -5"*/
 
 function highAndLow(numbers) {
-    let arr = numbers.split(" ").sort((a,b)=>a-b);
-    return arr[arr.length-1] + " " + arr[0] + ""
+    let arr = numbers.split(" ").sort((a, b) => a - b);
+    return arr[arr.length - 1] + " " + arr[0] + ""
+}
+
+/*This time no story, no theory. The examples below show you how to write function accum:
+
+Examples:
+accum("abcd") -> "A-Bb-Ccc-Dddd"
+accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+accum("cwAt") -> "C-Ww-Aaa-Tttt"
+The parameter of accum is a string which includes only letters from a..z and A..Z.
+*/
+
+function accum(s) {
+    let string = "";
+    for (let i = 0; i < s.length; i++) {
+        let element = s[i].toLowerCase();
+        if (i == 0) {
+            string += element.toUpperCase();
+        }
+        else {
+            string += ("-" + element.toUpperCase() + (element.repeat(i)) + "");
+        }
+    }
+    return string;
+}
+
+function accum2(s) {
+
+    return s.split("")
+        .map((e, i) => {
+             return e.toUpperCase() + (e.toLowerCase().repeat(i)) 
+            })
+        .join("-")
 }
 
 
@@ -443,7 +475,8 @@ window.onload = () => {
     if (boton != null) {
 
         boton.onclick = () => {
-            console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"), "42 -9");
+            console.log(accum("abcd"), " -> A-Bb-Ccc-Dddd");
+            console.log(accum2("abcd"), " -> A-Bb-Ccc-Dddd");
         }
     }
 }
