@@ -463,9 +463,36 @@ function accum2(s) {
 
     return s.split("")
         .map((e, i) => {
-             return e.toUpperCase() + (e.toLowerCase().repeat(i)) 
-            })
+            return e.toUpperCase() + (e.toLowerCase().repeat(i))
+        })
         .join("-")
+}
+
+/*In this kata you will create a function that takes a list of
+ non-negative integers and strings and returns a new list with the strings filtered out.
+
+Example
+filter_list([1,2,'a','b']) == [1,2]
+filter_list([1,'a','b',0,15]) == [1,0,15]
+filter_list([1,2,'aasf','1','123',123]) == [1,2,123]*/
+
+function filter_list2(l) {
+    let arr = []
+    for (let el of l) {
+        if (typeof (el) == 'number') {
+            arr.push(el)
+        }
+    }
+    return arr;
+}
+
+function filter_list(l) {
+    return l.filter( (el) => { return typeof el == 'number' });
+}
+
+let myListener = () => {
+    console.log(filter_list([1, 2, 'aasf', 0, '1', '123', 123]), " == [1,2,123]");
+    console.log(filter_list2([1, 2, 'aasf', 0, '1', '123', 123]), " == [1,2,123]");
 }
 
 
@@ -473,11 +500,7 @@ window.onload = () => {
     let boton = document.getElementById("accion");
 
     if (boton != null) {
-
-        boton.onclick = () => {
-            console.log(accum("abcd"), " -> A-Bb-Ccc-Dddd");
-            console.log(accum2("abcd"), " -> A-Bb-Ccc-Dddd");
-        }
+        boton.addEventListener("click",myListener)
     }
 }
 
