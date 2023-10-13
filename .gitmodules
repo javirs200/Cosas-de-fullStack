@@ -28,3 +28,5 @@
 	url = https://github.com/javirs200/prueba_gitHub.git
 [submodule "TAREAS/restcountries-api"]
 	url = https://github.com/javirs200/restcountries-api.git
+[submodule "TAREAS/Advanced-JS-Asynchronous-code"]
+	url = https://github.com/javirs200/Advanced-JS-Asynchronous-code.git
