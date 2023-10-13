@@ -26,3 +26,5 @@
 	url = https://github.com/javirs200/PERSONAL.git
 [submodule "TAREAS/prueba_gitHub"]
 	url = https://github.com/javirs200/prueba_gitHub.git
+[submodule "TAREAS/restcountries-api"]
+	url = https://github.com/javirs200/restcountries-api.git
