@@ -30,3 +30,7 @@
 	url = https://github.com/javirs200/restcountries-api.git
 [submodule "TAREAS/Advanced-JS-Asynchronous-code"]
 	url = https://github.com/javirs200/Advanced-JS-Asynchronous-code.git
+[submodule "TAREAS/advanced-js-bikram-async-await"]
+	url = https://github.com/javirs200/advanced-js-bikram-async-await.git
+[submodule "TAREAS/ejercicioLocalStorage"]
+	url = https://github.com/javirs200/ejercicioLocalStorage.git
