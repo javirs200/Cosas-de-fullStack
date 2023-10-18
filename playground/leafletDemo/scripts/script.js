@@ -30,11 +30,13 @@ var circle = L.circle([theBridgeLocation.x, theBridgeLocation.y], {
 }).addTo(map);
 
 var polygon = L.polygon([
-    [theBridgeLocation.x+0.001, theBridgeLocation.y+0.001],
-    [theBridgeLocation.x-0.001, theBridgeLocation.y+0.001],
+
     [theBridgeLocation.x-0.001, theBridgeLocation.y-0.001],
 
     [theBridgeLocation.x+0.001, theBridgeLocation.y-0.001],
-    
+
+    [theBridgeLocation.x+0.001, theBridgeLocation.y+0.001],
+
+    [theBridgeLocation.x-0.001, theBridgeLocation.y+0.001],
     
 ]).addTo(map);
