@@ -36,3 +36,5 @@
 	url = https://github.com/javirs200/ejercicioLocalStorage.git
 [submodule "TAREAS/jsFrontedApp"]
 	url = https://github.com/javirs200/jsFrontedApp.git
+[submodule "TAREAS/ejercicioFirebase"]
+	url = https://github.com/javirs200/ejercicioFirebase.git
