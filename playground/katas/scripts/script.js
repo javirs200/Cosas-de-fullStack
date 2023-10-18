@@ -504,10 +504,27 @@ function disemvowel(str) {
     return str.replace(/[aeiou]/gi, '')
 }
 
+/*An isogram is a word that has no repeating letters, 
+consecutive or non-consecutive. Implement a function that determines whether
+ a string that contains only letters is an isogram. Assume the empty string is an isogram.
+  Ignore letter case.
+
+Example: (Input --> Output)
+
+"Dermatoglyphics" --> true "aba" --> false "moOse" --> false (ignore letter case)
+
+isIsogram "Dermatoglyphics" = true
+isIsogram "moose" = false
+isIsogram "aba" = false*/
+
+
+function isIsogram(str){
+    return (/^(?:([a-z])(?!.*\1))*$/gmi).test(str)
+  }
+
 let myListener = () => {
-    console.log(disemvowel("This website is for losers LOL!"), "Ths wbst s fr lsrs LL!")
-    console.log(disemvowel("No offense but,\nYour writing is among the worst I've ever read"), "N ffns bt,\nYr wrtng s mng th wrst 'v vr rd")
-    console.log(disemvowel("What are you, a communist?"), "Wht r y,  cmmnst?")
+    console.log("isogram",isIsogram("isogram"),true);
+    console.log("Abbbaaa",isIsogram("Abbbaaa"),false);
 }
 
 
