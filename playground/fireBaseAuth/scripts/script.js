@@ -33,7 +33,7 @@ const readAll = () => {
             });
 
         })
-        .catch(() => console.log('Error reading documents'));
+        .catch((error) => console.log(`Error reading documents ${error.message}`));
 };
 
 //Read one
