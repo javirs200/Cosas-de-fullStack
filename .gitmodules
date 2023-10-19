@@ -38,3 +38,5 @@
 	url = https://github.com/javirs200/jsFrontedApp.git
 [submodule "TAREAS/ejercicioFirebase"]
 	url = https://github.com/javirs200/ejercicioFirebase.git
+[submodule "./TAREAS/QuiZ_vol.2"]
+	url = https://github.com/javirs200/QuiZ_vol.2.git
