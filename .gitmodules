@@ -40,3 +40,7 @@
 	url = https://github.com/javirs200/ejercicioFirebase.git
 [submodule "./TAREAS/QuiZ_vol.2"]
 	url = https://github.com/javirs200/QuiZ_vol.2.git
+[submodule "TAREAS/SWCharts"]
+	url = https://github.com/javirs200/SWCharts.git
+[submodule "TAREAS/ejercicioMapas"]
+	url = https://github.com/javirs200/ejercicioMapas.git
