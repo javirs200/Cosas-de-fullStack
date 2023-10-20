@@ -551,13 +551,47 @@ var isSquare = function (n) {
     return Number.isInteger(Math.sqrt(n))
 }
 
+/*Complete the function that
+
+accepts two integer arrays of equal length
+compares the value each member in one array to the corresponding member in the other
+squares the absolute value difference between those two values
+and returns the average of those squared absolute value difference between each member pair.*/
+
+var solution = function (firstArray, secondArray) {
+    let sum = 0;
+    for (let i = 0; i < firstArray.length; i++) {
+        sum += Math.pow(Math.abs(firstArray[i] - secondArray[i]), 2)
+    }
+    return sum / firstArray.length
+}
+
+var solution = function (firstArray, secondArray) {
+    return firstArray.reduce(function (s, n, i) { return s + Math.pow(n - secondArray[i], 2) }, 0) / firstArray.length;
+}
+
+/*Given an array of elements, return the length of the longest subarray where all its elements are distinct.
+For example, given the array [5, 1, 3, 5, 2, 3, 4, 1], return 5 as the longest subarray of distinct elements is [5, 1, 3, 2, 4].*/
+
+function longestSubArray(arr) {
+    return [...new Set(arr)].length
+}
+
+/*This problem was asked by Apple.
+A fixed point in an array is an element whose value is equal to its index.
+Given a sorted array of distinct elements, return a fixed point, if one exists. Otherwise, return False.
+For example, given [-6, 0, 2, 40], you should return 2. Given [1, 5, 7, 8], you should return False.*/
+
+function fixedPoint(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i]==i) return i    
+    }
+    return false; 
+}
+ 
 let myListener = () => {
-    console.log(isSquare(0), true, "0 is a square number (0 * 0)");
-    console.log(isSquare(-1), false, "-1: Negative numbers cannot be square numbers");
-    console.log(isSquare(3), false, "3 is not a square number");
-    console.log(isSquare(4), true, "4 is a square number (2 * 2)");
-    console.log(isSquare(25), true, "25 is a square number (5 * 5)");
-    console.log(isSquare(26), false, "26 is not a square number");
+    console.log(fixedPoint([-6, 0, 2, 40]))
+    console.log(fixedPoint([1, 5, 7, 8]))
 }
 
 
