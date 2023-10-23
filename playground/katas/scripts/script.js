@@ -588,10 +588,55 @@ function fixedPoint(arr) {
     }
     return false; 
 }
+
+/*Write a method (or function, depending on the language)
+ that converts a string to camelCase, that is, all words
+  must have their first letter capitalized and spaces must be removed.
+
+Examples (input --> output):
+"hello case" --> "HelloCase"
+"camel case word" --> "CamelCaseWord"
+Don't forget to rate this kata! Thanks :)*/
+
+String.prototype.camelCase=function(){
+    strArr = []
+    for (let word of this.split(' ')) {
+        word = word.charAt(0).toUpperCase() + word.slice(1)
+        strArr.push(word)
+    }
+    return strArr.join('');
+  }
+
+  /*¿Cuál será la fecha dentro 30 días? Mirad cómo funciona el objeto Date() en Javascript
+   y sus métodos: getDate(),toLocaleString(), setDate(), getMonth(), getTime(), etc... (hay más) */
+
+   function getDateIn30Days() {
+        let hoy = new Date()
+        let nuevo = new Date(hoy.setDate(hoy.getDate()+30))
+        return nuevo
+   }
+
+   /*¿Cuantas horas han pasado desde que empezó este bootcamp? ¿y en días?
+Fecha de comienzo de Bootcamp: 18/9/2023 */
+
+function getHoursFromBegin() { //18/9/2023
+    let diferenceMS = Math.abs(new Date(2023,8,18) - new Date());
+    let hours = (diferenceMS / (1000 * 60 * 60))
+    return Math.floor(hours)
+}
+
+function getDaysFromBegin() { //18/9/2023
+    let diferenceMS = Math.abs(new Date(2023,8,18) - new Date());
+    let days = (diferenceMS / (1000 * 60 * 60 * 24))
+    console.log(days);
+    console.log(days - Math.floor(days));
+    return Math.floor(days)
+}
  
 let myListener = () => {
-    console.log(fixedPoint([-6, 0, 2, 40]))
-    console.log(fixedPoint([1, 5, 7, 8]))
+    console.log(getDateIn30Days());
+    console.log(getHoursFromBegin());
+    console.log(getDaysFromBegin());
 }
 
 
