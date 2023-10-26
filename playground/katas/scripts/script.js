@@ -584,9 +584,9 @@ For example, given [-6, 0, 2, 40], you should return 2. Given [1, 5, 7, 8], you 
 
 function fixedPoint(arr) {
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i]==i) return i    
+        if (arr[i] == i) return i
     }
-    return false; 
+    return false;
 }
 
 /*Write a method (or function, depending on the language)
@@ -598,45 +598,120 @@ Examples (input --> output):
 "camel case word" --> "CamelCaseWord"
 Don't forget to rate this kata! Thanks :)*/
 
-String.prototype.camelCase=function(){
+String.prototype.camelCase = function () {
     strArr = []
     for (let word of this.split(' ')) {
         word = word.charAt(0).toUpperCase() + word.slice(1)
         strArr.push(word)
     }
     return strArr.join('');
-  }
+}
 
-  /*¿Cuál será la fecha dentro 30 días? Mirad cómo funciona el objeto Date() en Javascript
-   y sus métodos: getDate(),toLocaleString(), setDate(), getMonth(), getTime(), etc... (hay más) */
+/*¿Cuál será la fecha dentro 30 días? Mirad cómo funciona el objeto Date() en Javascript
+ y sus métodos: getDate(),toLocaleString(), setDate(), getMonth(), getTime(), etc... (hay más) */
 
-   function getDateIn30Days() {
-        let hoy = new Date()
-        let nuevo = new Date(hoy.setDate(hoy.getDate()+30))
-        return nuevo
-   }
+function getDateIn30Days() {
+    let hoy = new Date()
+    let nuevo = new Date(hoy.setDate(hoy.getDate() + 30))
+    return nuevo
+}
 
-   /*¿Cuantas horas han pasado desde que empezó este bootcamp? ¿y en días?
+/*¿Cuantas horas han pasado desde que empezó este bootcamp? ¿y en días?
 Fecha de comienzo de Bootcamp: 18/9/2023 */
 
 function getHoursFromBegin() { //18/9/2023
-    let diferenceMS = Math.abs(new Date(2023,8,18) - new Date());
+    let diferenceMS = Math.abs(new Date(2023, 8, 18) - new Date());
     let hours = (diferenceMS / (1000 * 60 * 60))
     return Math.floor(hours)
 }
 
 function getDaysFromBegin() { //18/9/2023
-    let diferenceMS = Math.abs(new Date(2023,8,18) - new Date());
+    let diferenceMS = Math.abs(new Date(2023, 8, 18) - new Date());
     let days = (diferenceMS / (1000 * 60 * 60 * 24))
     console.log(days);
     console.log(days - Math.floor(days));
     return Math.floor(days)
 }
- 
+/*This problem was asked by IBM.
+
+Given a string with repeated characters, rearrange the string so that no two adjacent 
+characters are the same. If this is not possible, return None.
+
+For example, given "aaabbc", you could return "ababac". Given "aaab", return None.*/
+
+function byIBM(string) {
+    let arr = string.split('')
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i + 1] === arr[i]) {
+            for (let j = i; j < arr.length; j++) {
+                if (arr[i + 1] !== arr[j]) {
+                    const a = arr[i + 1];
+                    const b = arr[j];
+                    arr[i + 1] = b;
+                    arr[j] = a;
+                }
+            }
+        }
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === arr[i + 1]) {
+            arr = ['N', 'o', 'n', 'e'];
+            break;
+        }
+    }
+    return arr.join('')
+}
+
+/*This problem was asked by Pinterest.
+Given an integer list where each number represents the number of hops you can make,
+ determine whether you can reach to the last index starting at index 0.
+For example, [2, 0, 1, 0] returns True while [1, 1, 0, 1] returns False*/
+
+function byPinterest(arr) {
+    let i = 0
+    while (arr[i] != 0 && i < arr.length) {
+        i += arr[i]
+    }
+    return i == arr.length - 1
+}
+
+/*Your job is to create a simple password validation function, as seen on many websites.
+
+The rules for a valid password are as follows:
+
+There needs to be at least 1 uppercase letter.
+There needs to be at least 1 lowercase letter.
+There needs to be at least 1 number.
+The password needs to be at least 8 characters long.
+You are permitted to use any methods to validate the password.
+
+Examples:
+password("Abcd1234"); ===> true
+password("Abcd123"); ===> false
+password("abcd1234"); ===> false
+password("AbcdefGhijKlmnopQRsTuvwxyZ1234567890"); ===> true
+password("ABCD1234"); ===> false
+password("Ab1!@#$%^&*()-_+={}[]|\:;?/>.<,"); ===> true;
+password("!@#$%^&*()-_+={}[]|\:;?/>.<,"); ===> false;
+Extra info
+You will only be passed strings.
+The string can contain any standard keyboard character.
+Accepted strings can be any length, as long as they are 8 characters or more.*/
+
+function password(str) {
+    const pswRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/g
+    return pswRegex.test(str)
+}
+
+
 let myListener = () => {
-    console.log(getDateIn30Days());
-    console.log(getHoursFromBegin());
-    console.log(getDaysFromBegin());
+    console.log(password("Abcd1234"), true);
+    console.log(password("Abcd123"), false);
+    console.log(password("abcd1234"), false);
+    console.log(password("AbcdefGhijKlmnopQRsTuvwxyZ1234567890"), true);
+    console.log(password("ABCD1234"), false);
+    console.log(password("Ab1!@#$%^&*()-_+={}[]|\:;?/>.<,"), true);
+    console.log(password("!@#$%^&*()-_+={}[]|\:;?/>.<,"), false);
 }
 
 
