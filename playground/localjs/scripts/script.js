@@ -23,13 +23,24 @@ async function local() {
     console.log(encripted);
 }
 
+
+function contarNumerosPares (arr){
+  return arr.reduce((contador, numero) => {
+    if (numero % 2 === 0) {
+      return contador + 1;
+    }
+    return contador;
+  }, 0);
+}
+ 
+
 window.onload = () => {
     let boton = document.getElementById("accion");
 
     if (boton != null) {
 
         boton.onclick = () => {
-            local()
+          console.log(contarNumerosPares ([5, 2, 6, 3, 7, 5, 6, 3]),[5, 2, 6, 3, 7, 5, 6, 3]);
         }
     }
 }
