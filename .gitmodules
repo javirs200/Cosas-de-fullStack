@@ -50,3 +50,6 @@
 	url = https://github.com/javirs200/express-books-exercise.git
 [submodule "TAREAS/ejercicio_API_REST_films_con_test"]
 	url = https://github.com/javirs200/ejercicio_API_REST_films_con_test.git
+[submodule "TAREAS/weather-app"]
+	path = TAREAS/weather-app
+	url = https://github.com/javirs200/weather-app.git
