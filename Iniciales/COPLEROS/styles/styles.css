@@ -1,0 +1,79 @@
+:root{
+    --colorFondo: #01d1fb;
+    --colorContacts : #b7effa;
+    --colorLineas : #01d1fb;
+    --fuenteTitulo: 'Segoe UI';
+    --fuenteNombres: 'Impact'
+}
+
+header{
+    text-align: center;
+}
+
+header>h1{
+    font-family: var(--fuenteTitulo);
+}
+
+li.contact>div.text>h1{
+    font-family: var(--fuenteNombres);;
+    font-weight: lighter;
+}
+
+body {
+    background-color: var(--colorFondo);
+}
+
+img{
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+img#lola{
+    /*no soy capaz de deformar la imagen*/
+    width: 30%;
+    height: 20%;
+}
+
+main.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: center;
+    margin-top: 5%;
+}
+
+ul.contacts{
+    width: 25%;
+    height: 25%;
+    border-radius: 5px;
+    background-color:var(--colorContacts) ;
+    list-style-type: none;
+}
+
+li.contact{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+li.contact > div.text{
+    margin-left: 5%;
+}
+
+hr{
+    width: 100%;
+    margin: auto;
+    color: var(--colorLineas);
+    background-color: var(--colorLineas);
+    height:2px;
+    border-width:0;
+}
