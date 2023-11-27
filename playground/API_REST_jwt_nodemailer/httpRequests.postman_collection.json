@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "7658e614-ac28-49b4-ae2c-415d0166ddda",
+		"name": "API_REST_jwt_nodemailer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21803091"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Guillermu\",\n    \"email\": \"dev.g.rubio@gmail.com\",\n    \"password\": \"ABCdef123!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Log in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Guillermu\",\n    \"email\": \"dev.g.rubio@gmail.com\",\n    \"password\": \"ABCdef123!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Log out",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Guillermu\",\n    \"email\": \"dev.g.rubio@gmail.com\",\n    \"password\": \"ABCdef123!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/logout/dev.g.rubio@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"logout",
+						"dev.g.rubio@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recover password",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Guillermu\",\n    \"email\": \"dev.g.rubio@gmail.com\",\n    \"password\": \"ABCdef123!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/recoverpassword/dev.g.rubio@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"recoverpassword",
+						"dev.g.rubio@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset password",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Guillermu\",\n    \"email\": \"dev.g.rubio@gmail.com\",\n    \"password\": \"ABCdef123!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/resetpassword/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldi5nLnJ1YmlvQGdtYWlsLmNvbSIsImlhdCI6MTY4NzE2OTI4NiwiZXhwIjoxNjg3MTcwNDg2fQ.c9yi2ctlzjiA_dWYC8bWVFA_PXHiYR7U-MQiAsEo9Do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"resetpassword",
+						"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldi5nLnJ1YmlvQGdtYWlsLmNvbSIsImlhdCI6MTY4NzE2OTI4NiwiZXhwIjoxNjg3MTcwNDg2fQ.c9yi2ctlzjiA_dWYC8bWVFA_PXHiYR7U-MQiAsEo9Do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get products (requires token)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldi5nLnJ1YmlvQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiR3VpbGxlcm11IiwiaWF0IjoxNjc0NjU4ODIwLCJleHAiOjE2NzQ2NjAwMjB9.ekSxh593_YsCGuK0mrWP_h_uwr9Ey5rlHxq-U6NvS3o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create products (requires token)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldi5nLnJ1YmlvQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiR3VpbGxlcm11IiwiaWF0IjoxNjc0NjU4ODIwLCJleHAiOjE2NzQ2NjAwMjB9.ekSxh593_YsCGuK0mrWP_h_uwr9Ey5rlHxq-U6NvS3o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 13,\n    \"title\": \"The Clash - London Calling\",\n    \"price\": 15.50,\n    \"description\": \"The best album of The Clash\",\n    \"image\": \"https://render.fineartamerica.com/images/rendered/default/metal-print/8/8/break/images/artworkimages/medium/2/london-calling-the-clash-amy-belonio.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
