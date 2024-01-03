@@ -704,14 +704,73 @@ function password(str) {
 }
 
 
+/*
+You want to build a standard house of cards, but you don't know how many cards you will need. 
+Write a program which will count the minimal number of cards according to the number of floors you want to have. For example, 
+if you want a one floor house, you will need 7 of them (two pairs of two cards on the base floor, one horizontal card and one pair to get the first floor).
+ Here you can see which kind of house of cards I mean:
+
+One floor:
+
+ /\
+ —
+/\/\
+
+Four floors:
+
+    /\
+    —
+   /\/\
+   — —
+  /\/\/\
+  — — —
+ /\/\/\/\
+ — — — —
+/\/\/\/\/\
+
+Note about floors:
+This kata uses the British numbering system for building floors. 
+If you want your house of cards to have a first floor, it needs a ground floor and then a first floor above that.
+
+Details (Ruby & JavaScript & Python & R)
+The input must be an integer greater than 0, for other input raise an error.
+*/
+
+function houseOfCards(floors) {
+    //good luck!
+    if (Number.isInteger(floors) && floors > 0) {
+        // 0 pisos
+        let count = 2
+        // n pisos
+        if (floors > 0) {
+            while (floors > 0) {
+                count += (floors+1)*2 + floors 
+                floors--;
+            }
+        }
+        return count;
+    } else {
+        throw new Error('oops');
+    }
+}
+
 let myListener = () => {
-    console.log(password("Abcd1234"), true);
-    console.log(password("Abcd123"), false);
-    console.log(password("abcd1234"), false);
-    console.log(password("AbcdefGhijKlmnopQRsTuvwxyZ1234567890"), true);
-    console.log(password("ABCD1234"), false);
-    console.log(password("Ab1!@#$%^&*()-_+={}[]|\:;?/>.<,"), true);
-    console.log(password("!@#$%^&*()-_+={}[]|\:;?/>.<,"), false);
+
+    console.log(houseOfCards(1), 7);
+    console.log(houseOfCards(2), 15);
+    console.log(houseOfCards(3), 26);
+    console.log(houseOfCards(6), 77);
+    console.log(houseOfCards(15), 392);
+
+    try { houseOfCards(0) } catch (error) { console.log(error); }
+    try { houseOfCards(-5) } catch (error) { console.log(error); }
+    try { houseOfCards(0.999) } catch (error) { console.log(error); }
+
+    try { houseOfCards('1') } catch (error) { console.log(error); }
+    try { houseOfCards('one') } catch (error) { console.log(error); }
+    try { houseOfCards(1.1) } catch (error) { console.log(error); }
+    try { houseOfCards([1]) } catch (error) { console.log(error); }
+    try { houseOfCards(true) } catch (error) { console.log(error); }
 }
 
 
